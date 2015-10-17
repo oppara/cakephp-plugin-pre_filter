@@ -12,12 +12,12 @@ App::uses('Component', 'Controller');
  */
 class TrimComponent extends Component {
 
-	/**
-	 * hexadeciaml notation of double-byte space
-	 *
-	 * @var array
-	 * @access protected
-	 */
+/**
+ * hexadeciaml notation of double-byte space
+ *
+ * @var array
+ * @access protected
+ */
 	protected $_spaces = array(
 		'utf-8' => "\xe3\x80\x80",
 		'euc-jp' => "\xA1\xA1",
@@ -26,6 +26,13 @@ class TrimComponent extends Component {
 		'sjis-win' => "\x81\x40",
 	);
 
+/**
+ * initialize & trim
+ *
+ * @param Controller $controller
+ * @return void
+ * @access public
+ */
 	public function initialize(Controller $controller) {
 		if (!isset($this->settings['encoding']) || is_null($this->settings['encoding'])) {
 			$this->settings['encoding'] = Configure::read('App.encoding');
@@ -42,15 +49,37 @@ class TrimComponent extends Component {
 		}
 	}
 
+/**
+ * execute
+ *
+ * @param string $str
+ * @return void
+ * @access protected
+ */
 	protected function _execute(&$str) {
 		$str = $this->_deleteNull($str);
 		$str = $this->_trim($str);
 	}
 
+/**
+ * delete null character
+ *
+ * @param string $str
+ * @return string
+ * @access protected
+ */
 	protected function _deleteNull($str) {
 		return str_replace("\0", '', $str);
 	}
 
+/**
+ * trim
+ *
+ * @param string $str
+ * @return string
+ * @access protected
+ * @throws Exception
+ */
 	protected function _trim($str) {
 		$str = trim($str);
 
