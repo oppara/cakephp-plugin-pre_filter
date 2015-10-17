@@ -1,0 +1,24 @@
+{
+  "name": "oppara/pre_filter",
+  "type": "cakephp-plugin",
+  "description": "Component Plugin which trim request data",
+  "keywords": ["cakephp", "trim", "filter"],
+  "license": "MIT",
+  "homepage": "https://github.com/oppara/cakephp-plugin-pre_filter",
+  "authors": [
+    {
+      "name": "oppara",
+      "email": "oppara@oppara.tv"
+    }
+  ],
+  "require": {
+    "php": ">=5.3",
+    "composer/installers" : "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": ">=3.7"
+  },
+  "extra": {
+    "installer-name": "PreFilter"
+  }
+}
