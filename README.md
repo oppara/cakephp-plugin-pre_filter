@@ -13,7 +13,7 @@ trim request data
 
     {
         "require": {
-            "oppara/cakephp_pre_filter": "*"
+            "oppara/pre_filter": "*"
         }
     }
 

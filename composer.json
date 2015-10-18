@@ -1,5 +1,5 @@
 {
-  "name": "oppara/cakephp_pre_filter",
+  "name": "oppara/pre_filter",
   "type": "cakephp-plugin",
   "description": "Component Plugin which trim request data",
   "keywords": ["cakephp", "trim", "filter"],
